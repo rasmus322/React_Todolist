@@ -5,11 +5,11 @@ interface TodoListProps {
     todoItems: TodoItem[]
 }
 
-const TodoList = (props: TodoListProps) => {
+const TodoList = ({todoItems}: TodoListProps) => {
     return (
         <ul>
-            { props.todoItems.length > 0 
-                ? props.todoItems.map((todoItem: TodoItem) => {
+            { todoItems.length > 0 
+                ? todoItems.map((todoItem: TodoItem) => {
                     return (
                         <TodoItemComponent key={todoItem.id} todoItem={todoItem} />
                     )

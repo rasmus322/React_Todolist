@@ -4,12 +4,12 @@ interface TodoItemProps {
     todoItem: TodoItem;
 }
 
-const TodoItem = (props: TodoItemProps) => {
+const TodoItem = ({ todoItem }: TodoItemProps) => {
     return (
         <li className="todoItem-item">
-            <input type="checkbox" checked={props.todoItem.completed} />
-            { props.todoItem.name }
-            <span> { props.todoItem.category } </span>
+            <input type="checkbox" checked={todoItem.completed} />
+            { todoItem.name }
+            <span> { todoItem.category } </span>
         </li>
     )
 }
