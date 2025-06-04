@@ -6,7 +6,15 @@ interface TodoState {
 }
 
 const initialState: TodoState = {
-  todos: []
+  todos: [
+    {
+      id: '1',
+      name: 'test name',
+      completed: false,
+      hasSubCategories: false,
+      category: 'others'
+    }
+  ]
 };
 
 const todoSlice = createSlice({
