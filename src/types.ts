@@ -1,5 +1,5 @@
 export interface TodoItem {
-    id: number;
+    id: string;
     name: string;
     category: TodoCategories;
     completed: boolean;
@@ -7,3 +7,5 @@ export interface TodoItem {
 }
 
 export type TodoCategories = 'health' | 'work' | 'mentalHealth' | 'others'
+
+export type TodoFormInputType = 'text' | 'select'

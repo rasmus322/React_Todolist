@@ -1,23 +1,22 @@
-import type { TodoItem } from "../../types"
-import TodoItemComponent from "../TodoItem"
+import { useSelector } from 'react-redux';
+import TodoItem from '../TodoItem';
+import { RootState } from '../../store/mainStore';
+import './style.css';
 
-interface TodoListProps {
-    todoItems: TodoItem[]
-}
+const TodoList = () => {
+    const todoItems = useSelector((state: RootState) => state.todos.todos);
 
-const TodoList = ({todoItems}: TodoListProps) => {
     return (
-        <ul>
-            { todoItems.length > 0 
-                ? todoItems.map((todoItem: TodoItem) => {
-                    return (
-                        <TodoItemComponent key={todoItem.id} todoItem={todoItem} />
-                    )
-                  })
-                : <h2 className="title">На данный момент у вас отсутствуют задачи</h2>
-            }
-        </ul>
-    )
-}
+        todoItems.length === 0 ? (
+            <p>На данный момент задач нет</p>
+        ) : (
+            <ul>
+                {todoItems.map((item) => (
+                    <TodoItem key={item.id} todoItem={item} />
+                ))}
+            </ul>
+        )
+    );
+};
 
-export default TodoList
+export default TodoList;
