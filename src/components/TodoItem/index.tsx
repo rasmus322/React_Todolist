@@ -1,15 +1,23 @@
+import { useDispatch } from "react-redux";
 import type { TodoItem } from "../../types";
+import { toggleTodo } from "../../store/mainStore";
 
 interface TodoItemProps {
     todoItem: TodoItem;
 }
 
-const TodoItem = (props: TodoItemProps) => {
+const TodoItem = ({ todoItem }: TodoItemProps) => {
+    const dispatch = useDispatch();
+    
+    const handleToggle = () => {
+        dispatch(toggleTodo(todoItem.id));
+    };
+
     return (
         <li className="todoItem-item">
-            <input type="checkbox" checked={props.todoItem.completed} />
-            { props.todoItem.name }
-            <span> { props.todoItem.category } </span>
+            <input type="checkbox" onChange={handleToggle} checked={todoItem.completed} />
+            { todoItem.name }
+            <span> { todoItem.category } </span>
         </li>
     )
 }
