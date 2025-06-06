@@ -1,20 +1,39 @@
 import { configureStore, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { TodoItem } from '../types';
+import { TodoItem, TodoCategories as TodoCategoriesType } from '../types';
+
+import healthIcon from "../assets/images/categories-icon-health.svg";
+import workIcon from "../assets/images/categories-icon-work.svg";
+import mentalHealthIcon from "../assets/images/categories-icon-mentalHealth.svg";
+import othersIcon from "../assets/images/categories-icon-others.svg";
+
+export const categories = {
+  'health': { text: 'Здоровье', icon: healthIcon },
+  'work': { text: 'Работа', icon: workIcon },
+  'mentalHealth': { text: 'Ментальное здоровье', icon: mentalHealthIcon },
+  'others': { text: 'Другое', icon: othersIcon }
+};
 
 interface TodoState {
   todos: TodoItem[];
+  categories: {
+    [key: string]: {
+      icon: string;
+      text: string;
+    }
+  };
 }
 
 const initialState: TodoState = {
   todos: [
     {
       id: '1',
-      name: 'test name',
+      name: 'test task',
       completed: false,
-      hasSubCategories: false,
-      category: 'others'
+      category: 'others',
+      hasSubCategories: false
     }
-  ]
+  ],
+  categories: categories
 };
 
 const todoSlice = createSlice({

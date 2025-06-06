@@ -1,12 +1,59 @@
+/* imports */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* vars */
 :root {
     /* background */
     --todoItem-category-bg-work: rgba(70, 207, 139, 0.1);
     --todoItem-category-bg-health: rgba(121, 144, 248, 0.1);
     --todoItem-category-bg-mentalHealth: rgba(188, 94, 173, 0.1);
+    --todoItem-category-bg-others: rgba(144, 137, 134, 0.1);
     /* text color */
     --text-color-primary: #121212;
     --text-color-secondary: #12121279;
     --todoItem-category-text-color-work: rgba(70, 207, 139);
     --todoItem-category-text-color-health: rgba(121, 144, 248);
     --todoItem-category-text-color-mentalHealth: rgba(188, 94, 173);
+    --todoItem-category-text-color-others: rgba(144, 137, 134);
+}
+
+* {
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1250px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    margin: auto;
+    padding: 30px 0;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 36px;
+    color: var(--text-color-primary);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* media */
+@media screen and (max-width: 650px) {
+    .container {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
 }

@@ -1,0 +1,30 @@
+.form-input-text {
+    width: 80%;
+    border: 1px solid var(--todoItem-category-text-color-others);
+    border-radius: 8px 0 0 8px;
+    outline: none;
+    padding: 10px 5px;
+}
+
+.form-input-select {
+    width: 20%;
+    background: none;
+    outline: none;
+    border: 1px solid var(--todoItem-category-text-color-others);
+    border-radius: 0 8px 8px 0;
+    padding: 10px 5px;
+}
+
+/* media */
+
+@media screen and (max-width: 650px) {
+    .form-input-text {
+        width: 60%;
+        font-size: 12px;
+    }
+
+    .form-input-select {
+        width: 40%;
+        font-size: 12px;
+    }
+}
