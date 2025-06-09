@@ -10,7 +10,7 @@ const TodoList = () => {
         todoItems.length === 0 ? (
             <p>На данный момент задач нет</p>
         ) : (
-            <ul>
+            <ul className='list'>
                 {todoItems.map((item) => (
                     <TodoItem key={item.id} todoItem={item} />
                 ))}

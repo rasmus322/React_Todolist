@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from 'react'
 import TodoListComponent from './components/TodoList'
 import TodoFormComponent from './components/TodoForm'
 import TodoCategories from './components/TodoCategories'
-import CreateBtnComponent from './components/CreateBtnComponent'
+import CustomBtnComponent from './components/CustomBtnComponent'
 //styles
 import './main.css'
 
@@ -24,7 +24,7 @@ function App() {
       <TodoCategories />
       {showForm && <TodoFormComponent onSuccess={closeForm} />}
       <TodoListComponent />
-      <CreateBtnComponent state={showForm} onClick={toggleForm} />
+      <CustomBtnComponent state={showForm} onClick={toggleForm} className='create-btn' />
     </div>
   )
 }

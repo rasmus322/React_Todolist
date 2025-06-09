@@ -43,6 +43,9 @@
 /* media */
 
 @media screen and (max-width: 650px) {
+    .form {
+        width: 90%;
+    }
     .form-title {
         font-size: 20px;
         margin-bottom: 20px;

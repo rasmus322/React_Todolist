@@ -1,0 +1,33 @@
+.list-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #00000028;
+    padding: 20px 16px;
+}
+
+.list-item input {
+    margin-right: 20px;
+}
+
+.list-item-text {
+    margin-right: auto;
+    margin-left: 0;
+}
+.list-item-text p {
+    font-weight: 500;
+    font-size: 17px;
+    color: var(--text-color-primary);
+    margin-bottom: 10px;
+}
+.list-item-text p.done {
+    text-decoration: line-through;
+}
+.list-item-text span {
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    padding: 4px 6px;
+}

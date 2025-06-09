@@ -1,0 +1,14 @@
+.list {
+    max-width: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 650px) {
+    .list {
+        max-width: 100%;
+    }
+}
