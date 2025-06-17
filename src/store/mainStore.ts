@@ -21,6 +21,7 @@ interface TodoState {
       text: string;
     }
   };
+  selectedCategory: string | null;
 }
 
 const initialState: TodoState = {
@@ -33,7 +34,8 @@ const initialState: TodoState = {
       hasSubCategories: false
     }
   ],
-  categories: categories
+  categories: categories,
+  selectedCategory: null
 };
 
 const todoSlice = createSlice({
@@ -57,11 +59,14 @@ const todoSlice = createSlice({
       if (index !== -1) {
         state.todos[index] = action.payload;
       }
+    },
+    setSelectedCategory: (state, action: PayloadAction<string | null>) => {
+      state.selectedCategory = action.payload;
     }
   }
 });
 
-export const { addTodo, toggleTodo, deleteTodo, updateTodo } = todoSlice.actions;
+export const { addTodo, toggleTodo, deleteTodo, updateTodo, setSelectedCategory } = todoSlice.actions;
 
 export const store = configureStore({
   reducer: {
