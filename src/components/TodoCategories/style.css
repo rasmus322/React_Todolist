@@ -33,6 +33,20 @@
     color: var(--text-color-secondary);
 }
 
+.category-item {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.category-item:hover {
+    transform: scale(1.02);
+}
+
+.category-item.selected {
+    border: 2px solid var(--todoItem-category-text-color-others);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
 /* media */
 
 @media screen and (max-width: 650px) {
